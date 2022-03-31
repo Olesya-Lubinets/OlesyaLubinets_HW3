@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Login:</h1>
+      <form action="/auth" method="POST">
+         Username:<br>
+            <input type="text" name="username" value="user"><br>
+          Password:<br>
+             <input type="text" name="password" value="pass"><br>
+            <input type="submit" value="Submit">
+            </form>
+
+          {% with messages = get_flashed_messages() %} {% if messages %}
+          <div class="errors-container">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+          {% endif %} {% endwith %}
+
+    </div>
+  </body>
+</html>
